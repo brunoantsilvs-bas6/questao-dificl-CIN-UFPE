@@ -1,0 +1,122 @@
+print('Ted se iludiu de novo. Esse é o momento que ele mais precisa dos amigos dele…')
+print('Quantos dos amigos dele conseguirão ajudar dessa vez?')
+quantidade_pessoas=int(input())
+if quantidade_pessoas == 0:
+    quant_media_cervejas = int(input())
+    print()
+    print('Relatório da situação de Ted:')
+    print("Ted foi para o MacLaren’s… Olhe em volta, Ted, você está sozinho.")
+    print(f'- Quantidade de cervejas bebidas por Ted: {quant_media_cervejas} cervejas.')
+else:
+    print('Hora da lista dos amigos da vez!')
+    nome1, nome2, nome3, nome4 = '', '', '', ''
+    barney_presente, robin_presente, marshall_presente, lily_presente = False, False, False, False
+    if quantidade_pessoas >=1:
+        nome1=str(input()).lower()
+        if nome1 == 'barney':
+            print('Barney foi voluntário dessa vez. Tenho certeza que ele vai conseguir transformar toda essa tristeza de Ted em um rolê Legen… espera por isso… DÁRIO.')
+            barney_presente =True
+        elif nome1 == 'robin':
+            print('Trompa azul na área! A repórter mais amada do Metro News 1 vai tentar ajudar. Tomara que ele não fique mais iludido ainda.')
+            robin_presente = True
+        elif nome1 == 'marshall':
+            print('O melhor amigo de Ted com certeza estaria com ele em um momento tão difícil. Marshall realmente sabe o valor da irmandade.')
+            marshall_presente = True
+        elif nome1 == 'lily':
+            print('Lily adora fazer o papel da irmã mais velha. Com certeza ela irá consolar ele, mas só depois de dizer “Eu avisei”.')
+            lily_presente = True
+        else:
+            print(f'{nome1.capitalize()} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.')
+    if quantidade_pessoas >= 2:
+        nome2 = input().lower()
+        if nome2 == 'barney':
+            print('Barney foi voluntário dessa vez. Tenho certeza que ele vai conseguir transformar toda essa tristeza de Ted em um rolê Legen… espera por isso… DÁRIO.')
+            barney_presente = True
+        elif nome2 == 'robin':
+            robin_presente = True
+            print('Trompa azul na área! A repórter mais amada do Metro News 1 vai tentar ajudar. Tomara que ele não fique mais iludido ainda.')
+        elif nome2 == 'marshall':
+            marshall_presente = True
+            print('O melhor amigo de Ted com certeza estaria com ele em um momento tão difícil. Marshall realmente sabe o valor da irmandade.')
+        elif nome2 == 'lily':
+            lily_presente = True
+            print('Lily adora fazer o papel da irmã mais velha. Com certeza ela irá consolar ele, mas só depois de dizer “Eu avisei”.')
+        else:
+            print(f'{nome2.capitalize()} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.')
+    if quantidade_pessoas >= 3:
+        nome3 = input().lower()
+        if nome3 == 'barney':
+            barney_presente = True
+            print('Barney foi voluntário dessa vez. Tenho certeza que ele vai conseguir transformar toda essa tristeza de Ted em um rolê Legen… espera por isso… DÁRIO.')
+        elif nome3 == 'robin':
+            robin_presente = True
+            print('Trompa azul na área! A repórter mais amada do Metro News 1 vai tentar ajudar. Tomara que ele não fique mais iludido ainda.')
+        elif nome3 == 'marshall':
+            marshall_presente = True
+            print('O melhor amigo de Ted com certeza estaria com ele em um momento tão difícil. Marshall realmente sabe o valor da irmandade.')
+        elif nome3 == 'lily':
+            lily_presente = True
+            print('Lily adora fazer o papel da irmã mais velha. Com certeza ela irá consolar ele, mas só depois de dizer “Eu avisei”.')
+        else:
+            print(f'{nome3.capitalize()} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.')
+    if quantidade_pessoas == 4:
+        nome4 = input().lower()
+        if nome4 == 'barney':
+            barney_presente = True
+            print('Barney foi voluntário dessa vez. Tenho certeza que ele vai conseguir transformar toda essa tristeza de Ted em um rolê Legen… espera por isso… DÁRIO.')
+        elif nome4 == 'robin':
+            robin_presente = True
+            print('Trompa azul na área! A repórter mais amada do Metro News 1 vai tentar ajudar. Tomara que ele não fique mais iludido ainda.')
+        elif nome4 == 'marshall':
+            marshall_presente = True
+            print('O melhor amigo de Ted com certeza estaria com ele em um momento tão difícil. Marshall realmente sabe o valor da irmandade.')
+        elif nome4 == 'lily':
+            lily_presente = True
+            print('Lily adora fazer o papel da irmã mais velha. Com certeza ela irá consolar ele, mas só depois de dizer “Eu avisei”.')
+        else:
+            print(f'{nome4.capitalize()} vai encarar essa com Ted. Às vezes a gente encontra apoio de quem menos espera.')
+    lugar_original = input()  
+    lugar = lugar_original.lower()
+    if quantidade_pessoas==2 and marshall_presente and lily_presente:
+        print('Nada melhor que um casal para dar conselhos de relacionamento.')
+    if quantidade_pessoas==2 and barney_presente and marshall_presente:
+        print('Sem dúvida os melhores amigos de Ted. Mas tomara que Barney não queira implicar com Marshall sobre quem realmente é o melhor amigo dele.')
+    if quantidade_pessoas == 4 and barney_presente and robin_presente and marshall_presente and lily_presente:
+        print('O quinteto estará reunido nessa jornada! É o momento perfeito pra brincar de “Você conhece o Ted?”.')    
+    if barney_presente and lugar == 'arena de laser tag':
+        print('Com certeza a Arena de Laser Tag foi escolhida por influência de Barney. Se arrume Ted, é hora de botar um terno, tomar um whisky e partir pra diversão.')
+    if quantidade_pessoas == 1 and robin_presente and (lugar == 'carmichael’s' or lugar == "carmichael's"):
+        print('Acho que Ted e Robin vão sair em um date… Tomara que Ted não roube aquela trompa azul da parede de novo.')
+    quant_tot_cervejas=0
+    if lugar== 'maclaren’s pub' or lugar == "maclaren's pub":
+            quant_media_cervejas=int(input())
+            quant_tot_cervejas = quant_media_cervejas * (quantidade_pessoas + 1)
+            amigo_principal_presente = barney_presente or robin_presente or marshall_presente or lily_presente
+            if amigo_principal_presente:
+                print('Não tem erro, né? Estar no MacLaren’s é como estar em casa.')
+            else:
+                print('Um lugar habitual, mas com uma galera diferente. Será estranho, mas Ted vai.')
+    nomes_final = nome1.capitalize()
+    if quantidade_pessoas ==2: nomes_final = f'{nome1.capitalize()} e {nome2.capitalize()}'
+    if quantidade_pessoas ==3: nomes_final = f'{nome1.capitalize()}, {nome2.capitalize()} e {nome3.capitalize()}'
+    if quantidade_pessoas ==4: nomes_final = f'{nome1.capitalize()}, {nome2.capitalize()}, {nome3.capitalize()} e {nome4.capitalize()}'
+    frase_final =''
+    if quantidade_pessoas ==1:
+        frase_final = 'Saideira de um pra um. Nada melhor do que uma pessoa pra ouvir seus problemas.'
+    elif quantidade_pessoas ==2:
+        frase_final ='Duas pessoas se compadeceram com a situação do pobre Ted.'
+    elif quantidade_pessoas ==3:
+        frase_final = 'Três pessoas! Ted conseguiu se divertir bastante.'
+    elif quantidade_pessoas ==4:
+        if barney_presente and robin_presente and marshall_presente and lily_presente:
+            frase_final ='O quinteto junto consegue resolver qualquer problema!'
+        else:
+            frase_final ='Saiu um quinteto um pouco diferente do que a gente tá acostumado, mas no fim conseguiram deixar Ted alegre.'
+    print()
+    print('Relatório da situação de Ted:')
+    print(f'- Ted foi consolado por: {nomes_final}.')
+    print(f'- O local de afogar as mágoas foi: {lugar_original}.')
+    print(f'- {frase_final}')
+    if lugar=='maclaren’s pub'or lugar == "maclaren's pub":
+        print(f'- Quantidade de cervejas bebidas pelo grupo: {quant_tot_cervejas} cervejas.')
+    print('Pelo visto todo mundo já sabe como funciona a cabeça dele, né? Depois do rolê Ted conseguiu esfriar a cabeça e já tá pronto pra quebrar mais a cara. Quem será que serão os próximos a consolar o querido Ted Mosby?')
